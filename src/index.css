@@ -57,10 +57,37 @@ body {
 }
 
 
+
+/* Card.js */
+
+.card{
+  width: 70px;
+}
+
+.number{
+  text-align: center;
+}
+
+.suit-bottom{
+  text-align: right;
+}
+
+
+
+/* Hand.js */
+
+.hand{
+  display: flex;
+  width: 150px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
 /* Custom Scrollbar */
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 50px;
 }
 
 /* Track */
