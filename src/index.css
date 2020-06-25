@@ -1,5 +1,6 @@
 body {
   background: #cc66ff;
+  overflow: hidden;
 }
 
 
@@ -10,9 +11,69 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 75vh;
+  margin-top: 5%;
 }
 
 .login-main{
   width: 500px;
+}
+
+
+
+/* ChatBox.js */
+
+.chatbox{
+  display: grid;
+  width: 25%;
+  height: 100vh;
+  grid-template-rows: 10fr 1fr;
+}
+
+.chat-container{
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.chat-input{
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Message.js */
+
+.message{
+
+}
+
+.username{
+
+}
+
+.message-text{
+  text-indent: 1em;
+  margin-bottom: 1.5em;
+}
+
+
+/* Custom Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
