@@ -1,1 +1,1 @@
-# Interactive Blackjack Web App
+# Blackjack
