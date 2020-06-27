@@ -56,6 +56,10 @@ body {
   margin-bottom: 1.5em;
 }
 
+
+
+/* Table.js */
+
 .dealer{
 
 }
@@ -87,6 +91,17 @@ body {
   justify-items: center;
   align-items: center;
 }
+
+
+/* TableRules.js */
+
+.table-rules{
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+
 
 
 /* PlayerBox.js */
