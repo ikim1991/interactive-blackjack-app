@@ -1,12 +1,28 @@
 import React from 'react';
 import LogIn from './containers/LogIn';
 import Messenger from './containers/Messenger';
-import Hand from './containers/Hand';
+import PlayerBox from './containers/PlayerBox';
 
 function App() {
   return (
     <div className="App">
-      <Hand/>
+      <div className="players">
+        <div className="player-one">
+          <PlayerBox/>
+        </div>
+        <div className="player-two">
+          <PlayerBox/>
+        </div>
+        <div className="player-three">
+          <PlayerBox/>
+        </div>
+        <div className="player-four">
+          <PlayerBox/>
+        </div>
+        <div className="player-five">
+          <PlayerBox/>
+        </div>
+      </div>
     </div>
   );
 }

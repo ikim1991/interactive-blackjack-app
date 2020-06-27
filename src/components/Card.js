@@ -3,7 +3,7 @@ import React from 'react';
 function Card(){
 
   const card = {
-    suit: "diams",
+    suit: "spades",
     number: "A",
     value: 11
   }
@@ -11,7 +11,7 @@ function Card(){
   switch(card.suit){
     case "spades":
       return (
-        <div className="card ba br2 pa1 black bg-white">
+        <div className="card ba br2 pa1 black bg-white pointer">
           <div className="suit f3">
             &spades;
           </div>
@@ -26,7 +26,7 @@ function Card(){
 
     case "clubs":
       return (
-        <div className="card ba br2 pa1 black bg-white">
+        <div className="card ba br2 pa1 black bg-white pointer">
           <div className="suit f3">
             &clubs;
           </div>
@@ -41,7 +41,7 @@ function Card(){
 
     case "hearts":
       return (
-        <div className="card ba br2 pa1 red bg-white">
+        <div className="card ba br2 pa1 red bg-white pointer">
           <div className="suit f3">
             &hearts;
           </div>
@@ -56,7 +56,7 @@ function Card(){
 
     case "diams":
       return (
-        <div className="card ba br2 pa1 red bg-white">
+        <div className="card ba br2 pa1 red bg-white pointer">
           <div className="suit f3">
             &diams;
           </div>
@@ -70,16 +70,7 @@ function Card(){
       )
     default:
       return (
-        <div className="card ba br2 pa1 black bg-white">
-          <div className="suit f3">
-            &spades;
-          </div>
-          <div className="number f3">
-            A
-          </div>
-          <div className="suit-bottom f3">
-            &spades;
-          </div>
+        <div className="card ba br2 pa1 black bg-near-black pointer">
         </div>
       )
   }

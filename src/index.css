@@ -58,10 +58,53 @@ body {
 
 
 
+.players{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.player-one, .player-five{
+  display: flex;
+  height: 800px;
+  align-items: baseline;
+}
+
+.player-two, .player-three, .player-four{
+  display: flex;
+  height: 800px;
+  align-items: flex-end;
+}
+
+
+
+/* PlayerBox.js */
+
+.player-box{
+  display: grid;
+  width: 380px;
+  justify-items: center;
+  padding: 5px;
+}
+
+
+/* Counter.js */
+
+.counter{
+  width: 360px;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+
 /* Card.js */
 
 .card{
   width: 70px;
+  height: 90px;
 }
 
 .number{
@@ -78,9 +121,108 @@ body {
 
 .hand{
   display: flex;
-  width: 150px;
+  width: 360px;
+  height: 110px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* UserInfo.js */
+
+.user-info{
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  height: 225px;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.user-dp{
+  width: 125px;
+}
+
+.empty:hover{
+  background: #f4f4f4;
+}
+
+
+
+/* Chips.js */
+
+.chips{
+  display: flex;
+  width: 225px;
+  height: 50px;
   justify-content: space-around;
   align-items: center;
+}
+
+.chip{
+  display: flex;
+  width:35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Bets.js */
+
+.bets{
+  display: flex;
+  width: 225px;
+  height: 125px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bet{
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.lucky-lucky{
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* PlayerCommands.js */
+
+.player-commands{
+  display: flex;
+  width: 270px;
+  height: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hit{
+  width: 65px;
+}
+
+.stay{
+  width: 65px;
+}
+
+.double{
+  width: 65px;
+}
+
+.exit{
+  width: 65px;
 }
 
 
