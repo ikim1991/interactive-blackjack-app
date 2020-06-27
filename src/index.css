@@ -56,7 +56,9 @@ body {
   margin-bottom: 1.5em;
 }
 
+.dealer{
 
+}
 
 .players{
   display: grid;
@@ -75,6 +77,16 @@ body {
   align-items: flex-end;
 }
 
+
+/* DealerBox.js */
+
+.dealer-box{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
 
 
 /* PlayerBox.js */
@@ -127,6 +139,18 @@ body {
   align-items: center;
 }
 
+
+/* Dealer.js */
+
+.dealer-info{
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  height: 170px;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}
 
 
 /* UserInfo.js */

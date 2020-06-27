@@ -2,10 +2,14 @@ import React from 'react';
 import LogIn from './containers/LogIn';
 import Messenger from './containers/Messenger';
 import PlayerBox from './containers/PlayerBox';
+import DealerBox from './containers/DealerBox';
 
 function App() {
   return (
     <div className="App">
+      <div className="dealer">
+        <DealerBox/>
+      </div>
       <div className="players">
         <div className="player-one">
           <PlayerBox/>
