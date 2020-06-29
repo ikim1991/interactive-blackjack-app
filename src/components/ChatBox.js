@@ -5,12 +5,11 @@ import '../index.js';
 function ChatBox(){
   return(
     <div className="chatbox">
-      <div className="chat-container bg-near-white ba">
+      <div className="chat-container bg-near-black ba b--near-white">
         <Message/>
       </div>
-      <div className="chat-input bg-near-white pa1 ba">
-        <input className="w-80" type="text"/>
-        <button className="w-20">ENTER</button>
+      <div className="chat-input bg-near-black pa1 ba b--near-white">
+        <input className="w-100" type="text"/>
       </div>
     </div>
   )

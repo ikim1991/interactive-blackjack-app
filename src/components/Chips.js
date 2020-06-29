@@ -2,7 +2,7 @@ import React from 'react';
 
 function Chips(){
   return (
-    <div className="chips">
+    <div className="chips mb2">
       <div className="chip br-100 ba b--near-white bg-near-white black pointer" value="1">1</div>
       <div className="chip br-100 ba b--red bg-red black pointer" value="5">5</div>
       <div className="chip br-100 ba b--green bg-green black pointer" value="25">25</div>

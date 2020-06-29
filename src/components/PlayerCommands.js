@@ -8,7 +8,7 @@ function PlayerCommands(){
   switch(status){
     case "betting":
       return(
-        <div className="player-commands">
+        <div className="player-commands mb2">
           <button className="hit ba br2 pointer" type="button" disabled>Hit</button>
           <button className="stay ba br2 pointer" type="button" disabled>Stay</button>
           <button className="double ba br2 pointer" type="button" disabled>Double</button>
@@ -17,7 +17,7 @@ function PlayerCommands(){
       )
     case "waiting":
       return(
-        <div className="player-commands">
+        <div className="player-commands mb2">
           <button className="hit ba br2 pointer" type="button" disabled>Hit</button>
           <button className="stay ba br2 pointer" type="button" disabled>Stay</button>
           <button className="double ba br2 pointer" type="button" disabled>Double</button>
@@ -27,7 +27,7 @@ function PlayerCommands(){
 
     case "first-round":
       return(
-        <div className="player-commands">
+        <div className="player-commands mb2">
           <button className="hit ba br2 pointer" type="button">Hit</button>
           <button className="stay ba br2 pointer" type="button">Stay</button>
           <button className="double ba br2 pointer" type="button">Double</button>
@@ -37,7 +37,7 @@ function PlayerCommands(){
 
     case "second-round":
       return(
-        <div className="player-commands">
+        <div className="player-commands mb2">
           <button className="hit ba br2 pointer" type="button">Hit</button>
           <button className="stay ba br2 pointer" type="button">Stay</button>
           <button className="double ba br2 pointer" type="button" disabled>Double</button>
@@ -47,7 +47,7 @@ function PlayerCommands(){
 
     default:
       return(
-        <div className="player-commands">
+        <div className="player-commands mb2">
           <button className="hit ba br2 pointer" type="button" disabled>Hit</button>
           <button className="stay ba br2 pointer" type="button" disabled>Stay</button>
           <button className="double ba br2 pointer" type="button" disabled>Double</button>

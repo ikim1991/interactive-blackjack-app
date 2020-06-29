@@ -10,9 +10,18 @@ function Counter(){
 
   return(
     <div className="counter ba br3">
-      <p>{`Your Hand: ${counter.hand}`}</p>
-      <p>{`Bet Size: ${counter.bet}`}</p>
-      <p>{`Lucky-Lucky: ${counter.lucky}`}</p>
+      <div className="counter-item">
+        <p>Your Hand</p>
+        <p>{`${counter.hand}`}</p>
+      </div>
+      <div className="counter-item">
+        <p>Bet Size</p>
+        <p>{`${counter.bet}`}</p>
+      </div>
+      <div className="counter-item">
+        <p>Lucky Lucky</p>
+        <p>{`${counter.lucky}`}</p>
+      </div>
     </div>
   )
 }

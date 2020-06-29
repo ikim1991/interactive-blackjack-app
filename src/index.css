@@ -3,9 +3,13 @@ body {
   overflow: hidden;
 }
 
+.App{
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
 
 /* LogInForm.js */
-
 .login-form {
   display: flex;
   justify-content: center;
@@ -18,257 +22,483 @@ body {
   width: 500px;
 }
 
-
-
-/* ChatBox.js */
-
-.chatbox{
-  display: grid;
-  width: 25%;
-  height: 100vh;
-  grid-template-rows: 10fr 1fr;
-}
-
-.chat-container{
-  width: 100%;
-  overflow-y: scroll;
-}
-
-.chat-input{
-  display: flex;
-  align-items: center;
-}
-
-
-
-/* Message.js */
-
-.message{
+@media screen and (max-width: 1365px){
 
 }
 
-.username{
+@media screen and (min-width: 1366px) and (max-width: 1599px){
 
 }
 
-.message-text{
-  text-indent: 1em;
-  margin-bottom: 1.5em;
+@media screen and (min-width: 1600px) and (max-width: 1919px){
+  /* ChatBox.js */
+  .chatbox{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-rows: 12fr 1fr;
+  }
+  .chat-container{
+    width: 100%;
+    overflow-y: scroll;
+  }
+  .chat-input{
+    display: flex;
+    align-items: center;
+  }
+
+
+  /* Message.js */
+  .message{
+    width: 100%;
+  }
+  .message-info{
+    line-height: 0.25em;
+  }
+  .timestamp{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  .username{
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .message-text{
+    padding-left: 6%;
+    padding-right: 6%;
+    margin-bottom: 1.5em;
+  }
+
+
+  /* Messenger.js */
+  .messenger{
+    width: 100%;
+  }
+
+
+  /* Table.js */
+  .table{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 205px 125px auto;
+    overflow: hidden;
+  }
+  .players{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    bottom: 75px;
+  }
+  .player-one, .player-five{
+    display: flex;
+    align-items: baseline;
+  }
+  .player-two, .player-three, .player-four{
+    display: flex;
+    align-items: flex-end;
+  }
+
+
+  /* DealerBox.js */
+  .dealer-box{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+
+  /* Dealer.js */
+  .dealer-info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .dealer-count{
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* TableRules.js */
+  .table-rules{
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+    margin-top: 50px;
+    font-size: 1.25em;
+  }
+  .table-rules p:nth-child(even){
+    font-size: 2em;
+  }
+
+
+  /* PlayerBox.js */
+  .player-box{
+    display: grid;
+    width: 20%;
+    justify-items: center;
+    padding: 4px;
+  }
+
+
+  /* Counter.js */
+  .counter{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .counter-item{
+    display: grid;
+    grid-template-rows: 35px 35px;
+    justify-items: center;
+  }
+  .counter-item p{
+    align-self: center;
+  }
+
+
+  /* Card.js */
+  .card{
+    text-align: center;
+  }
+
+
+  /* Hand.js */
+  .hand{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
+
+
+  /* Bets.js */
+  .bets{
+    display: flex;
+    width: 100%;
+    height: 125px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .bet{
+    display: flex;
+    width: 40%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .lucky-lucky{
+    display: flex;
+    width: 40%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  /* Chips.js */
+  .chips{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .chip{
+    display: flex;
+    width:25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  /* PlayerCommands.js */
+  .player-commands{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .hit{
+    width: 65px;
+  }
+  .stay{
+    width: 65px;
+  }
+  .double{
+    width: 65px;
+  }
+  .exit{
+    width: 65px;
+  }
+
+
+  /* UserInfo.js */
+  .user-info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+  }
+  .user-dp{
+    width: 50px;
+  }
+  .empty:hover{
+    background: #f4f4f4;
+  }
 }
 
+@media screen and (min-width: 1920px){
+  /* ChatBox.js */
+  .chatbox{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-rows: 12fr 1fr;
+  }
+  .chat-container{
+    width: 100%;
+    overflow-y: scroll;
+  }
+  .chat-input{
+    display: flex;
+    align-items: center;
+  }
 
 
-/* Table.js */
-
-.dealer{
-
-}
-
-.players{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.player-one, .player-five{
-  display: flex;
-  height: 800px;
-  align-items: baseline;
-}
-
-.player-two, .player-three, .player-four{
-  display: flex;
-  height: 800px;
-  align-items: flex-end;
-}
+  /* Message.js */
+  .message{
+    width: 100%;
+  }
+  .message-info{
+    line-height: 0.25em;
+  }
+  .timestamp{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  .username{
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .message-text{
+    padding-left: 6%;
+    padding-right: 6%;
+    margin-bottom: 1.5em;
+  }
 
 
-/* DealerBox.js */
-
-.dealer-box{
-  width: 100%;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-}
+  /* Messenger.js */
+  .messenger{
+    width: 100%;
+  }
 
 
-/* TableRules.js */
-
-.table-rules{
-  width: 100%;
-  text-align: center;
-  line-height: 0;
-}
-
-
-
-
-/* PlayerBox.js */
-
-.player-box{
-  display: grid;
-  width: 380px;
-  justify-items: center;
-  padding: 5px;
-}
-
-
-/* Counter.js */
-
-.counter{
-  width: 360px;
-  height: 90px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+  /* Table.js */
+  .table{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 205px 125px auto;
+    overflow: hidden;
+  }
+  .players{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    bottom: 75px;
+  }
+  .player-one, .player-five{
+    display: flex;
+    align-items: baseline;
+  }
+  .player-two, .player-three, .player-four{
+    display: flex;
+    align-items: flex-end;
+  }
 
 
+  /* DealerBox.js */
+  .dealer-box{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
 
 
-/* Card.js */
-
-.card{
-  width: 70px;
-  height: 90px;
-}
-
-.number{
-  text-align: center;
-}
-
-.suit-bottom{
-  text-align: right;
-}
-
-
-
-/* Hand.js */
-
-.hand{
-  display: flex;
-  width: 360px;
-  height: 110px;
-  justify-content: center;
-  align-items: center;
-}
+  /* Dealer.js */
+  .dealer-info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .dealer-count{
+    width: 100%;
+    text-align: center;
+  }
 
 
-/* Dealer.js */
-
-.dealer-info{
-  display: flex;
-  flex-wrap: wrap;
-  width: 250px;
-  height: 170px;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: center;
-}
-
-
-/* UserInfo.js */
-
-.user-info{
-  display: flex;
-  flex-wrap: wrap;
-  width: 250px;
-  height: 225px;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: center;
-}
-
-.user-dp{
-  width: 125px;
-}
-
-.empty:hover{
-  background: #f4f4f4;
-}
+  /* TableRules.js */
+  .table-rules{
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+    margin-top: 50px;
+    font-size: 1.5em;
+  }
+  .table-rules p:nth-child(even){
+    font-size: 2em;
+  }
 
 
-
-/* Chips.js */
-
-.chips{
-  display: flex;
-  width: 225px;
-  height: 50px;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.chip{
-  display: flex;
-  width:35px;
-  height: 35px;
-  justify-content: center;
-  align-items: center;
-}
+  /* PlayerBox.js */
+  .player-box{
+    display: grid;
+    width: 20%;
+    justify-items: center;
+    padding: 4px;
+  }
 
 
-
-/* Bets.js */
-
-.bets{
-  display: flex;
-  width: 225px;
-  height: 125px;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.bet{
-  display: flex;
-  width: 100px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-}
-
-.lucky-lucky{
-  display: flex;
-  width: 100px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-}
+  /* Counter.js */
+  .counter{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .counter-item{
+    display: grid;
+    grid-template-rows: 35px 35px;
+    justify-items: center;
+  }
+  .counter-item p{
+    align-self: center;
+  }
 
 
+  /* Card.js */
+  .card{
+    text-align: center;
+  }
 
-/* PlayerCommands.js */
 
-.player-commands{
-  display: flex;
-  width: 270px;
-  height: 30px;
-  justify-content: space-around;
-  align-items: center;
-}
+  /* Hand.js */
+  .hand{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
 
-.hit{
-  width: 65px;
-}
 
-.stay{
-  width: 65px;
-}
+  /* Bets.js */
+  .bets{
+    display: flex;
+    width: 100%;
+    height: 125px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .bet{
+    display: flex;
+    width: 40%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .lucky-lucky{
+    display: flex;
+    width: 40%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
 
-.double{
-  width: 65px;
-}
 
-.exit{
-  width: 65px;
+  /* Chips.js */
+  .chips{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .chip{
+    display: flex;
+    width:25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  /* PlayerCommands.js */
+  .player-commands{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .hit{
+    width: 65px;
+  }
+  .stay{
+    width: 65px;
+  }
+  .double{
+    width: 65px;
+  }
+  .exit{
+    width: 65px;
+  }
+
+
+  /* UserInfo.js */
+  .user-info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+  }
+  .user-dp{
+    width: 50px;
+  }
+  .empty:hover{
+    background: #f4f4f4;
+  }
 }
 
 
 /* Custom Scrollbar */
 /* width */
 ::-webkit-scrollbar {
-  width: 50px;
+  width: 5px;
 }
 
 /* Track */

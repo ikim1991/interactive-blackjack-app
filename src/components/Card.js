@@ -12,14 +12,8 @@ function Card(){
     case "spades":
       return (
         <div className="card ba br2 pa1 black bg-white pointer">
-          <div className="suit f3">
-            &spades;
-          </div>
-          <div className="number f3">
-            {card.number}
-          </div>
-          <div className="suit-bottom f3">
-            &spades;
+          <div className="suit">
+            &spades;{card.number}
           </div>
         </div>
       )
@@ -27,14 +21,8 @@ function Card(){
     case "clubs":
       return (
         <div className="card ba br2 pa1 black bg-white pointer">
-          <div className="suit f3">
-            &clubs;
-          </div>
-          <div className="number f3">
-            {card.number}
-          </div>
-          <div className="suit-bottom f3">
-            &clubs;
+          <div className="suit">
+            &clubs;{card.number}
           </div>
         </div>
       )
@@ -42,14 +30,8 @@ function Card(){
     case "hearts":
       return (
         <div className="card ba br2 pa1 red bg-white pointer">
-          <div className="suit f3">
-            &hearts;
-          </div>
-          <div className="number f3">
-            {card.number}
-          </div>
-          <div className="suit-bottom f3">
-            &hearts;
+          <div className="suit">
+            &hearts;{card.number}
           </div>
         </div>
       )
@@ -57,14 +39,8 @@ function Card(){
     case "diams":
       return (
         <div className="card ba br2 pa1 red bg-white pointer">
-          <div className="suit f3">
-            &diams;
-          </div>
-          <div className="number f3">
-            {card.number}
-          </div>
-          <div className="suit-bottom f3">
-            &diams;
+          <div className="suit">
+            &diams;{card.number}
           </div>
         </div>
       )
