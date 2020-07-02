@@ -1,37 +1,62 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import Message from './Message';
 import '../index.js';
 import { connect } from 'react-redux';
-import { setMessageSend } from '../actions';
+import io from 'socket.io-client';
+import { setChatlog } from '../actions';
+
+let socket = io("localhost:3001")
+const user = {
+  username: "Christopf",
+  chips: 1000
+}
+
+const onMessageSend = (event) => {
+  if(event.keyCode === 13 && event.target.value.length > 0){
+    socket.emit("sendMessage", { user, message: event.target.value })
+    document.getElementsByTagName("input")[0].value = ""
+  }
+}
+
 
 const mapStateToProps = (state) => {
   return {
-    message: state.message
+    chatlog: state.chatlog
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onMessageSend: (event) => {
-      if(event.keyCode === 13){
-        dispatch(setMessageSend(event.target.value))
-        document.getElementsByTagName("input")[0].value = ""
-      }
+    onMessageReceived: (userMessage) => {
+      dispatch(setChatlog(userMessage))
+      document.getElementsByClassName('chat-container')[0].scrollBy(0, 82)
     }
   }
 }
 
 function ChatBox(props){
 
-  console.log(props)
+  useEffect(() => {
+    socket.on("message", (userMessage) => {
+      props.onMessageReceived(userMessage)
+    })
+
+    return () => {
+      socket.emit('disconnect')
+      socket.off()
+    }
+  })
 
   return(
     <div className="chatbox">
       <div className="chat-container bg-near-black ba b--near-white">
-        <Message/>
+        {props.chatlog.map((message, ind) => {
+          return <Message username={message.username} message={message.text} timestamp={message.createdAt} key={ind}/>
+        })}
       </div>
       <div className="chat-input bg-near-black pa1 ba b--near-white">
-        <input className="w-100" type="text" placeholder="Insert Text Here..." onKeyDown={props.onMessageSend} autoFocus/>
+        <input className="w-100" type="text" placeholder="Insert Text Here..." onKeyDown={onMessageSend} autoFocus/>
       </div>
     </div>
   )

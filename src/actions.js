@@ -1,3 +1,1 @@
-export const setMessageSend = (text) => {
-  return { type: "SEND_MESSAGE", payload: text }
-}
+export const setChatlog = (userMessage) => ({ type: "APPEND_TO_LOG", payload: userMessage })

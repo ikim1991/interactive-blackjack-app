@@ -1,11 +1,11 @@
-const initialStateMessage = {
-  message: ""
+const initialStateChatlog = {
+  chatlog: []
 }
 
-export const sendMessage = (state = initialStateMessage, action={}) => {
+export const appendChatlog = (state = initialStateChatlog, action={}) => {
   switch(action.type){
-    case "SEND_MESSAGE":
-      return Object.assign({}, state, { message: action.payload })
+    case "APPEND_TO_LOG":
+      return Object.assign({}, state, {chatlog: [...state.chatlog, action.payload]})
     default:
       return state
   }

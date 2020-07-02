@@ -1,17 +1,17 @@
 import React from 'react';
+import moment from 'moment';
 
-function Message(){
+function Message(props){
   return(
     <div className="message near-white">
       <div>
         <div className="message-info">
-          <p className="timestamp">{`[TIMESTAMP]`}</p>
-          <p className="username">{`USERNAME`}</p>
+          <p className="timestamp">{`[${moment(props.timestamp).format('L')} ${moment(props.timestamp).format('LT')}]`}</p>
+          <p className="username">{`${props.username}`}</p>
         </div>
-
       </div>
       <div className="message-text">
-        <p>{`INSERT TEXT HERE`}</p>
+        <p>{`${props.message}`}</p>
       </div>
     </div>
   )
