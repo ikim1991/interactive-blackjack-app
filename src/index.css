@@ -1,13 +1,7 @@
 body {
-  background: #cc66ff;
+  background: #137752;
   overflow: hidden;
 }
-
-.App{
-  display: grid;
-  grid-template-columns: 80% 20%;
-}
-
 
 /* LogInForm.js */
 .login-form {
@@ -15,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .login-main{
@@ -92,6 +86,12 @@ body {
   display: grid;
   grid-template-rows: 205px 125px auto;
   overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .players{
   display: grid;
@@ -259,6 +259,11 @@ body {
 
 
 @media screen and (max-width: 1365px){
+  .App{
+    display: grid;
+    grid-template-columns: 80% 20%;
+  }
+
   /* Table.js */
   .table{
     grid-template-rows: 100px 75px auto;
@@ -351,6 +356,11 @@ body {
 }
 
 @media screen and (min-width: 1366px) and (max-width: 1599px){
+  .App{
+    display: grid;
+    grid-template-columns: 80% 20%;
+  }
+
   /* Table.js */
   .table{
     grid-template-rows: 150px 100px auto;
@@ -406,6 +416,11 @@ body {
 }
 
 @media screen and (min-width: 1600px) and (max-width: 1919px){
+  .App{
+    display: grid;
+    grid-template-columns: 80% 20%;
+  }
+
   /* Table.js */
   .players{
     bottom: 20px;
@@ -452,6 +467,7 @@ body {
 
 @media screen and (min-width: 1920px){
   .App{
+    display: grid;
     grid-template-columns: 75% 25%;
   }
 }
