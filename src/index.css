@@ -16,6 +16,10 @@ body {
   width: 500px;
 }
 
+.buttons{
+  display: flex;
+}
+
 
 /* ChatBox.js */
 .chatbox{
@@ -250,9 +254,15 @@ body {
   align-items: flex-end;
   text-align: center;
 }
+
 .user-dp{
   width: 75px;
 }
+
+.empty{
+  align-items: center;
+}
+
 .empty:hover{
   background: #f4f4f4;
 }
@@ -344,7 +354,6 @@ body {
     width: 55px;
   }
 
-  /* UserInfo.js */
   /* UserInfo.js */
   .user-info{
     font-size: 0.8em;

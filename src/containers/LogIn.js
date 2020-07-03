@@ -6,7 +6,7 @@ class LogIn extends React.Component{
   render(){
     return (
       <div className="login">
-        <LogInForm/>
+        <LogInForm {...this.props}/>
       </div>
     )
   }

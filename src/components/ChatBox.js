@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import Message from './Message';
 import '../index.js';
 import { connect } from 'react-redux';
@@ -56,7 +55,7 @@ function ChatBox(props){
         })}
       </div>
       <div className="chat-input bg-near-black pa1 ba b--near-white">
-        <input className="w-100" type="text" placeholder="Insert Text Here..." onKeyDown={onMessageSend} autoFocus/>
+        <input className="chat-bar w-100" type="text" placeholder="Insert Text Here..." onKeyDown={onMessageSend} autoFocus/>
       </div>
     </div>
   )

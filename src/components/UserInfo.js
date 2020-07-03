@@ -5,7 +5,7 @@ function UserInfo(){
   const userInfo = {
     username: "Username",
     chips: 1000,
-    isEmpty: false
+    isEmpty: true
   }
 
   return(
