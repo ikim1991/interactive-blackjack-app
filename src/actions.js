@@ -1,6 +1,6 @@
 export const setChatlog = (userMessage) => ({ type: "APPEND_TO_LOG", payload: userMessage })
 
-export const loggingIn = (username, password, server) => (dispatch) => {
+export const loggingIn = (username, password, server, history) => (dispatch) => {
   dispatch({ type: "LOG_IN_PENDING"})
   fetch("http://localhost:3001/signin", {
     method: 'post',
@@ -9,11 +9,9 @@ export const loggingIn = (username, password, server) => (dispatch) => {
   })
   .then(response => response.json())
   .then(data => dispatch({ type: "LOG_IN_SUCCESS", payload: data}))
-  .then(user => {
-    if(user.payload.authenticated){
-      document.location.href = `${user.payload.server}`
-    } else{
-      alert("INVALID CREDENTIALS...")
+  .then(data => {
+    if(data.payload.authenticated){
+      history.push(`${data.payload.server}`)
     }
   })
   .catch(error => dispatch({ type: "LOG_IN_ERROR", payload: error}))

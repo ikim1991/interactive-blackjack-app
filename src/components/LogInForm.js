@@ -5,17 +5,14 @@ import { loggingIn } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    username: state.userLogIn.username,
-    chips: state.userLogIn.chips,
-    server: state.userLogIn.server,
-    authenticated: state.userLogIn.authenticated
+    user: state.userLogIn.user
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onUserLogIn: (username, password, server) => {
-      dispatch(loggingIn(username, password, server))
+    onUserLogIn: (username, password, server, history) => {
+      dispatch(loggingIn(username, password, server, history))
     }
   }
 }
@@ -33,7 +30,7 @@ function LogInForm(props) {
     } else if(server === "default"){
       alert("Choose Server")
     } else{
-      props.onUserLogIn(username, password, server)
+      props.onUserLogIn(username, password, server, props.history)
     }
   }
 

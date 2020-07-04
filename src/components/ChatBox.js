@@ -6,21 +6,11 @@ import io from 'socket.io-client';
 import { setChatlog } from '../actions';
 
 let socket = io("localhost:3001")
-const user = {
-  username: "Christopf",
-  chips: 1000
-}
-
-const onMessageSend = (event) => {
-  if(event.keyCode === 13 && event.target.value.length > 0){
-    socket.emit("sendMessage", { user, message: event.target.value })
-    document.getElementsByTagName("input")[0].value = ""
-  }
-}
 
 const mapStateToProps = (state) => {
   return {
-    chatlog: state.appendChatlog.chatlog
+    chatlog: state.appendChatlog.chatlog,
+    user: state.userLogIn.user
   }
 }
 
@@ -34,6 +24,13 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 function ChatBox(props){
+
+  const onMessageSend = (event) => {
+    if(event.keyCode === 13 && event.target.value.length > 0){
+      socket.emit("sendMessage", {username: props.user.username, message: event.target.value})
+      document.getElementsByTagName("input")[0].value = ""
+    }
+  }
 
   useEffect(() => {
     socket.on("message", (userMessage) => {
@@ -51,7 +48,7 @@ function ChatBox(props){
       <div className="chat-container bg-near-black ba b--near-white">
         {
           props.chatlog.map((message, ind) => {
-          return <Message username={message.username} message={message.text} timestamp={message.createdAt} key={ind}/>
+          return <Message username={message.username} message={message.message} timestamp={message.createdAt} key={ind}/>
         })}
       </div>
       <div className="chat-input bg-near-black pa1 ba b--near-white">
