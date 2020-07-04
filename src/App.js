@@ -19,7 +19,31 @@ function App() {
             <SignUpForm {...props}/>
           )
         }}/>
-        <Route exact path="/server" render={() => {
+        <Route exact path="/server-1" render={() => {
+          return(
+            <div className="App">
+              <Table/>
+              <Messenger/>
+            </div>
+          )
+        }}/>
+        <Route exact path="/server-2" render={() => {
+          return(
+            <div className="App">
+              <Table/>
+              <Messenger/>
+            </div>
+          )
+        }}/>
+        <Route exact path="/server-3" render={() => {
+          return(
+            <div className="App">
+              <Table/>
+              <Messenger/>
+            </div>
+          )
+        }}/>
+        <Route exact path="/server-4" render={() => {
           return(
             <div className="App">
               <Table/>

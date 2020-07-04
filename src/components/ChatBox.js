@@ -18,10 +18,9 @@ const onMessageSend = (event) => {
   }
 }
 
-
 const mapStateToProps = (state) => {
   return {
-    chatlog: state.chatlog
+    chatlog: state.appendChatlog.chatlog
   }
 }
 
@@ -50,7 +49,8 @@ function ChatBox(props){
   return(
     <div className="chatbox">
       <div className="chat-container bg-near-black ba b--near-white">
-        {props.chatlog.map((message, ind) => {
+        {
+          props.chatlog.map((message, ind) => {
           return <Message username={message.username} message={message.text} timestamp={message.createdAt} key={ind}/>
         })}
       </div>

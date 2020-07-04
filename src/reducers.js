@@ -10,3 +10,30 @@ export const appendChatlog = (state = initialStateChatlog, action={}) => {
       return state
   }
 }
+
+const initialStateUser = {
+  username: "",
+  chips: 0,
+  server: "",
+  authenticated: false,
+  isPending: false,
+  error: ""
+}
+
+export const userLogIn = (state = initialStateUser, action={}) => {
+  switch(action.type){
+    case "LOG_IN_PENDING":
+      return Object.assign({}, state, {isPending: true})
+    case "LOG_IN_SUCCESS":
+      return Object.assign({}, state, { username: action.payload.username,
+                                        chips: action.payload.chips,
+                                        server: action.payload.server,
+                                        authenticated: action.payload.authenticated,
+                                        isPending: false
+                                      })
+    case "LOG_IN_ERROR":
+      return Object.assign({}, state, {error: action.payload, isPending: false})
+    default:
+      return state
+  }
+}
