@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import Message from './Message';
 import '../index.js';
 import { connect } from 'react-redux';
-import io from 'socket.io-client';
 import { setChatlog } from '../actions';
-
-let socket = io("localhost:3001")
+import { socket } from '../ClientSocket';
 
 const mapStateToProps = (state) => {
   return {
@@ -25,29 +23,43 @@ const mapDispatchToProps = (dispatch) => {
 
 function ChatBox(props){
 
+  const { chatlog, user, onMessageReceived } = props
+
   const onMessageSend = (event) => {
     if(event.keyCode === 13 && event.target.value.length > 0){
-      socket.emit("sendMessage", {username: props.user.username, message: event.target.value})
+      socket.emit('sendMessage', {username: user.username, message: event.target.value})
       document.getElementsByTagName("input")[0].value = ""
     }
   }
 
   useEffect(() => {
-    socket.on("message", (userMessage) => {
-      props.onMessageReceived(userMessage)
+    socket.on('message', (userMessage) => {
+      onMessageReceived(userMessage)
     })
 
     return () => {
       socket.emit('disconnect')
       socket.off()
     }
-  })
+  }, [chatlog, onMessageReceived])
+
+  useEffect(() => {
+    window.addEventListener('beforeunload', (event) => {
+      event.preventDefault()
+      socket.emit('logout', user)
+    })
+
+    return () => {
+      socket.emit('disconnect')
+      socket.off()
+    }
+  }, [user])
 
   return(
     <div className="chatbox">
       <div className="chat-container bg-near-black ba b--near-white">
         {
-          props.chatlog.map((message, ind) => {
+          chatlog.map((message, ind) => {
           return <Message username={message.username} message={message.message} timestamp={message.createdAt} key={ind}/>
         })}
       </div>

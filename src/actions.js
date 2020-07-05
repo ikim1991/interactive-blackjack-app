@@ -1,3 +1,5 @@
+import { socket } from './ClientSocket';
+
 export const setChatlog = (userMessage) => ({ type: "APPEND_TO_LOG", payload: userMessage })
 
 export const loggingIn = (username, password, server, history) => (dispatch) => {
@@ -12,6 +14,7 @@ export const loggingIn = (username, password, server, history) => (dispatch) => 
   .then(data => {
     if(data.payload.authenticated){
       history.push(`${data.payload.server}`)
+      socket.emit('login', data.payload)
     }
   })
   .catch(error => dispatch({ type: "LOG_IN_ERROR", payload: error}))
