@@ -32,7 +32,7 @@ function ChatBox(props){
 
   const onMessageSend = (event) => {
     if(event.keyCode === 13 && event.target.value.length > 0){
-      socket.emit('sendMessage', {username: user.username, message: event.target.value})
+      socket.emit('sendMessage', {user: user, message: event.target.value})
       document.getElementsByTagName("input")[0].value = ""
     }
   }

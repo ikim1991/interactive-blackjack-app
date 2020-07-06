@@ -1,3 +1,5 @@
+import Player from './Player';
+
 const initialStateChatlog = {
   chatlog: []
 }
@@ -46,4 +48,21 @@ export const userLogIn = (state = initialStateUser, action={}) => {
     default:
       return state
   }
+}
+
+const initialStateGame = {
+  dealer: {
+    hand: [],
+    count: 0
+  },
+  players: {
+    one: new Player(),
+    two:new Player(),
+    three: new Player(),
+    four: new Player(),
+    five: new Player()
+  },
+  deck: [
+
+  ]
 }
