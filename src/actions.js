@@ -13,9 +13,11 @@ export const loggingIn = (username, password, server, history) => (dispatch) => 
   .then(data => dispatch({ type: "LOG_IN_SUCCESS", payload: data}))
   .then(data => {
     if(data.payload.authenticated){
-      history.push(`${data.payload.server}`)
       socket.emit('login', data.payload)
+      history.push(`${data.payload.server}`)
     }
   })
   .catch(error => dispatch({ type: "LOG_IN_ERROR", payload: error}))
 }
+
+export const updateUsersList = (allUsers) => ({ type: "UPDATE_USERS_LIST", payload: allUsers })
