@@ -39,13 +39,12 @@ function ChatBox(props){
 
   useEffect(() => {
     socket.on('message', (userMessage) => {
-      console.log(userMessage)
       onMessageReceived(userMessage)
     })
 
     return () => {
       socket.emit('disconnect')
-      socket.off()
+      socket.off('message')
     }
   })
 
@@ -56,7 +55,7 @@ function ChatBox(props){
 
     return () => {
       socket.emit('disconnect')
-      socket.off()
+      socket.off('updateUsers')
     }
   })
 

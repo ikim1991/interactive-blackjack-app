@@ -21,3 +21,5 @@ export const loggingIn = (username, password, server, history) => (dispatch) => 
 }
 
 export const updateUsersList = (allUsers) => ({ type: "UPDATE_USERS_LIST", payload: allUsers })
+
+export const updateGameState = (game) => ({ type: "UPDATE_GAME_STATE", payload: game})

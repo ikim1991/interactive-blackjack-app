@@ -1,4 +1,4 @@
-import Player from './Player';
+import Game from './Game';
 
 const initialStateChatlog = {
   chatlog: []
@@ -23,7 +23,8 @@ const initialStateUser = {
   allUsers: [],
   room: "",
   isPending: false,
-  error: ""
+  error: "",
+  game: (new Game()).game
 }
 
 export const userLogIn = (state = initialStateUser, action={}) => {
@@ -39,7 +40,8 @@ export const userLogIn = (state = initialStateUser, action={}) => {
                                         },
                                         allUsers: action.payload.allUsers,
                                         room: action.payload.room,
-                                        isPending: false
+                                        isPending: false,
+                                        game: action.payload.game
                                       })
     case "LOG_IN_ERROR":
       return Object.assign({}, state, {error: action.payload, isPending: false})
@@ -51,18 +53,14 @@ export const userLogIn = (state = initialStateUser, action={}) => {
 }
 
 const initialStateGame = {
-  dealer: {
-    hand: [],
-    count: 0
-  },
-  players: {
-    one: new Player(),
-    two:new Player(),
-    three: new Player(),
-    four: new Player(),
-    five: new Player()
-  },
-  deck: [
+  game: initialStateUser.game
+}
 
-  ]
+export const gameState = (state = initialStateGame, action = {}) => {
+  switch(action.type){
+    case "UPDATE_GAME_STATE":
+      return Object.assign({}, state, { game: action.payload.game })
+    default:
+      return state
+  }
 }

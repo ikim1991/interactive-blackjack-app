@@ -3,7 +3,47 @@ import DealerBox from './DealerBox';
 import TableRules from '../components/TableRules';
 import PlayerBox from './PlayerBox';
 
+import { socket } from '../ClientSocket';
+import { connect } from 'react-redux';
+import { updateGameState } from '../actions';
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.userLogIn.user,
+    game: state.gameState.game
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onGameUpdate: (game) => {
+      dispatch(updateGameState(game))
+    }
+  }
+}
+
 class Table extends React.Component{
+
+  componentDidMount(){
+
+    socket.on('loginState', (game) => {
+      this.props.onGameUpdate(game)
+    })
+
+    socket.on('updateGame', (game) => {
+      this.props.onGameUpdate(game)
+    })
+  }
+
+  componentWillUnmount(){
+    socket.emit('disconnect')
+    socket.off('updateGame')
+  }
+
+  onSeatPlayer(user, player){
+    socket.emit('seatPlayer', user, player)
+  }
+
   render(){
     return (
       <div className="table bg-dark-green">
@@ -11,19 +51,19 @@ class Table extends React.Component{
         <TableRules/>
         <div className="players">
           <div className="player-one">
-            <PlayerBox/>
+            <PlayerBox seatPlayer={this.onSeatPlayer} player={"one"}/>
           </div>
           <div className="player-two">
-            <PlayerBox/>
+            <PlayerBox seatPlayer={this.onSeatPlayer} player={"two"}/>
           </div>
           <div className="player-three">
-            <PlayerBox/>
+            <PlayerBox seatPlayer={this.onSeatPlayer} player={"three"}/>
           </div>
           <div className="player-four">
-            <PlayerBox/>
+            <PlayerBox seatPlayer={this.onSeatPlayer} player={"four"}/>
           </div>
           <div className="player-five">
-            <PlayerBox/>
+            <PlayerBox seatPlayer={this.onSeatPlayer} player={"five"}/>
           </div>
         </div>
       </div>
@@ -31,4 +71,4 @@ class Table extends React.Component{
   }
 }
 
-export default Table;
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

@@ -5,7 +5,8 @@ import { loggingIn } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    user: state.userLogIn.user
+    user: state.userLogIn.user,
+    game: state.gameState.game
   }
 }
 

@@ -15,7 +15,7 @@ class PlayerBox extends React.Component{
         <Bets/>
         <Chips/>
         <PlayerCommands/>
-        <UserInfo/>
+        <UserInfo seatPlayer = {this.props.seatPlayer} player={this.props.player}/>
       </div>
     )
   }
