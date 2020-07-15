@@ -33,10 +33,8 @@ class Table extends React.Component{
     })
 
     socket.on('updateGame', (game, user) => {
-      console.log(this.props.game, this.props.user, "BEFORE")
       this.props.onGameUpdate(game)
       this.props.onUserUpdate(user)
-      console.log(this.props.game, this.props.user, "AFTER")
     })
 
     window.addEventListener('beforeunload', (event) => {

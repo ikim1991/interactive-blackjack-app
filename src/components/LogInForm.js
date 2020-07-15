@@ -44,11 +44,11 @@ function LogInForm(props) {
         </div>
         <div className="mt3">
           <label className="db f3 mb1" htmlFor="username">Username</label>
-          <input id="login-username" className="pa2 ba mb3 bg-transparent hover-bg-black hover-white w-60" type="text" name="username" autoFocus/>
+          <input id="login-username" className="pa2 ba mb3 bg-transparent hover-bg-black hover-white w-60" type="text" name="username" defaultValue="admin" autoFocus/>
           <label className="db f3 mb1" htmlFor="username">Password</label>
-          <input id="login-password" className="pa2 ba mb3 bg-transparent hover-bg-black hover-white w-60" type="password" name="password"/>
+          <input id="login-password" className="pa2 ba mb3 bg-transparent hover-bg-black hover-white w-60" type="password" name="password" defaultValue="admin"/>
           <label className="db f3 mb1" htmlFor="servers">Choose Server</label>
-          <select id="servers" className="pa2 ba bg-transparent hover-bg-black hover-white pointer w-60" name="servers">
+          <select id="servers" className="pa2 ba bg-transparent hover-bg-black hover-white pointer w-60" name="servers" defaultValue="server-1">
             <option value="default"></option>
             <option value="server-1">Server 1</option>
             <option value="server-2">Server 2</option>
