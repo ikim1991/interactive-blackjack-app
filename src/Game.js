@@ -3,24 +3,12 @@ import Player from './Player';
 class Game{
   constructor(){
     this.game = {
-      phase: {
-        waiting: true,
-        betting: false,
-        firstDeal: false,
-        secondDeal: false,
-        playerOne: false,
-        playerTwo: false,
-        playerThree: false,
-        playerFour: false,
-        playerFive: false,
-        dealersTurn: false,
-        results: false,
-        distribution: false
-      },
+      phase: 'waiting',
       dealer: {
         hand: [],
         firstCard: [],
-        count: 0
+        count: 0,
+        text: "Place your Bets!"
       },
       players: {
         one: new Player(),

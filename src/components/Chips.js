@@ -4,7 +4,6 @@ function Chips(){
 
   const drag = (event) => {
     event.dataTransfer.setData("text", event.target.getAttribute("value"))
-    console.log(event.target.getAttribute("value"))
   }
 
   return (

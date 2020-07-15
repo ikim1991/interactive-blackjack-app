@@ -11,10 +11,9 @@ const mapStateToProps = (state) => {
 function UserInfo(props){
   const { user, player, game, seatPlayer } = props
   return(
-    (!game.players[player].seated) ? (
+    (!game.players[player].user.seated) ? (
       <div className="user-info empty ba br4 pointer f-headline-l" value={player} onClick={() => seatPlayer(user, player)}>
         +
-        {console.log(game.players[player], player)}
       </div>
     ) : (
       <div className="user-info ba br4" value={player}>

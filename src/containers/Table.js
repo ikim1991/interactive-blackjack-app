@@ -5,7 +5,7 @@ import PlayerBox from './PlayerBox';
 
 import { socket } from '../ClientSocket';
 import { connect } from 'react-redux';
-import { updateGameState } from '../actions';
+import { updateGameState, updateUser } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onGameUpdate: (game) => {
       dispatch(updateGameState(game))
+    },
+    onUserUpdate: (user) => {
+      dispatch(updateUser(user))
     }
   }
 }
@@ -25,18 +28,26 @@ const mapDispatchToProps = (dispatch) => {
 class Table extends React.Component{
 
   componentDidMount(){
-
     socket.on('loginState', (game) => {
       this.props.onGameUpdate(game)
     })
 
-    socket.on('updateGame', (game) => {
+    socket.on('updateGame', (game, user) => {
+      console.log(this.props.game, this.props.user, "BEFORE")
       this.props.onGameUpdate(game)
+      this.props.onUserUpdate(user)
+      console.log(this.props.game, this.props.user, "AFTER")
+    })
+
+    window.addEventListener('beforeunload', (event) => {
+      event.preventDefault()
+      socket.emit('logout', this.props.user)
     })
   }
 
   componentWillUnmount(){
     socket.emit('disconnect')
+    socket.off('logout')
     socket.off('updateGame')
   }
 

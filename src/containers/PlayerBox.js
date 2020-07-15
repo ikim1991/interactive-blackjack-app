@@ -12,7 +12,7 @@ class PlayerBox extends React.Component{
       <div className="player-box">
         <Counter/>
         <Hand/>
-        <Bets/>
+        <Bets player={this.props.player}/>
         <Chips/>
         <PlayerCommands/>
         <UserInfo seatPlayer = {this.props.seatPlayer} player={this.props.player}/>

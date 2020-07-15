@@ -20,6 +20,8 @@ export const loggingIn = (username, password, server, history) => (dispatch) => 
   .catch(error => dispatch({ type: "LOG_IN_ERROR", payload: error}))
 }
 
+export const updateUser = (user) => ({ type: "UPDATE_USER", payload: user})
+
 export const updateUsersList = (allUsers) => ({ type: "UPDATE_USERS_LIST", payload: allUsers })
 
-export const updateGameState = (game) => ({ type: "UPDATE_GAME_STATE", payload: game})
+export const updateGameState = (game) => ({ type: "UPDATE_GAME_STATE", payload: game })

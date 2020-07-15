@@ -19,6 +19,9 @@ const initialStateUser = {
     chips: 0,
     server: "",
     authenticated: false,
+    seated: false,
+    playerNumber: "",
+    turn: false
   },
   allUsers: [],
   room: "",
@@ -36,7 +39,10 @@ export const userLogIn = (state = initialStateUser, action={}) => {
                                           username: action.payload.username,
                                           chips: action.payload.chips,
                                           server: action.payload.server,
-                                          authenticated: action.payload.authenticated
+                                          authenticated: action.payload.authenticated,
+                                          turn: action.payload.turn,
+                                          seated: action.payload.seated,
+                                          playerNumber: action.payload.playerNumber
                                         },
                                         allUsers: action.payload.allUsers,
                                         room: action.payload.room,
@@ -44,9 +50,11 @@ export const userLogIn = (state = initialStateUser, action={}) => {
                                         game: action.payload.game
                                       })
     case "LOG_IN_ERROR":
-      return Object.assign({}, state, {error: action.payload, isPending: false})
+      return Object.assign({}, state, { error: action.payload, isPending: false })
     case "UPDATE_USERS_LIST":
       return Object.assign({}, state, { allUsers: action.payload })
+    case "UPDATE_USER":
+      return Object.assign({}, state, { user: action.payload })
     default:
       return state
   }
@@ -57,6 +65,15 @@ const initialStateGame = {
 }
 
 export const gameState = (state = initialStateGame, action = {}) => {
+  switch(action.type){
+    case "UPDATE_GAME_STATE":
+      return Object.assign({}, state, { game: action.payload.game })
+    default:
+      return state
+  }
+}
+
+export const gamePhase = (state = initialStateGame, action = {}) => {
   switch(action.type){
     case "UPDATE_GAME_STATE":
       return Object.assign({}, state, { game: action.payload.game })

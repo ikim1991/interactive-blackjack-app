@@ -59,19 +59,6 @@ function ChatBox(props){
     }
   })
 
-  useEffect(() => {
-
-    window.addEventListener('beforeunload', (event) => {
-      event.preventDefault()
-      socket.emit('logout', user)
-    })
-
-    return () => {
-      socket.emit('disconnect')
-      socket.off()
-    }
-  }, [user])
-
   return(
     <div className="chatbox">
       <div className="chat-header bg-near-black ba b--near-white near-white">{`(${allUsers.length}) ${room}`}</div>
