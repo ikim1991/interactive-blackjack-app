@@ -15,7 +15,7 @@ function Chips(props){
   }
 
   return (
-    ((props.user.seated) && (props.game.phase === "betting" || props.game.phase === "waiting")) ? (
+    ((props.user.seated && props.user.playerNumber === props.player) && (props.game.phase === "betting" || props.game.phase === "waiting")) ? (
       <div className="chips mb2">
         <div id="abc" className="chip br-100 ba b--near-white bg-near-white black pointer" value="1" draggable="true" onDragStart={drag}>1</div>
         <div id="abc" className="chip br-100 ba b--red bg-red black pointer" value="5" draggable="true" onDragStart={drag}>5</div>
