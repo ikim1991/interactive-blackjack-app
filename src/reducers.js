@@ -21,7 +21,8 @@ const initialStateUser = {
     authenticated: false,
     seated: false,
     playerNumber: "",
-    turn: false
+    turn: false,
+    sessionID: ""
   },
   allUsers: [],
   room: "",
@@ -42,7 +43,8 @@ export const userLogIn = (state = initialStateUser, action={}) => {
                                           authenticated: action.payload.authenticated,
                                           turn: action.payload.turn,
                                           seated: action.payload.seated,
-                                          playerNumber: action.payload.playerNumber
+                                          playerNumber: action.payload.playerNumber,
+                                          sessionID: action.payload.sessionID
                                         },
                                         allUsers: action.payload.allUsers,
                                         room: action.payload.room,

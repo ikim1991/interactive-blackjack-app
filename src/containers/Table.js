@@ -32,8 +32,11 @@ class Table extends React.Component{
       this.props.onGameUpdate(game)
     })
 
-    socket.on('updateGame', (game, user) => {
+    socket.on('updateGame', (game) => {
       this.props.onGameUpdate(game)
+    })
+
+    socket.on('updateUser', (user) => {
       this.props.onUserUpdate(user)
     })
 
