@@ -10,11 +10,11 @@ class PlayerBox extends React.Component{
   render(){
     return(
       <div className="player-box">
-        <Counter/>
-        <Hand/>
+        <Counter player={this.props.player}/>
+        <Hand player={this.props.player}/>
         <Bets player={this.props.player}/>
         <Chips player={this.props.player}/>
-        <PlayerCommands/>
+        <PlayerCommands player={this.props.player}/>
         <UserInfo seatPlayer = {this.props.seatPlayer} player={this.props.player}/>
       </div>
     )

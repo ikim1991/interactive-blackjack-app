@@ -34,11 +34,15 @@ function Bets(props){
   }
 
   const clearBet = () => {
-    console.log("CLEAR BET")
+    if(props.game.players[props.player].bet > 0){
+      socket.emit('clearBet', "bet", props.user)
+    }
   }
 
   const clearLucky = () => {
-    console.log("CLEAR LUCKY")
+    if(props.game.players[props.player].lucky > 0){
+      socket.emit('clearBet', "lucky", props.user)
+    }
   }
 
   return(
