@@ -74,12 +74,3 @@ export const gameState = (state = initialStateGame, action = {}) => {
       return state
   }
 }
-
-export const gamePhase = (state = initialStateGame, action = {}) => {
-  switch(action.type){
-    case "UPDATE_GAME_STATE":
-      return Object.assign({}, state, { game: action.payload.game })
-    default:
-      return state
-  }
-}

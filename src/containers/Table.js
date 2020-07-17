@@ -25,6 +25,15 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const countDown = (i, user) => {
+    let int = setInterval(function () {
+        socket.emit('countdown', i, user)
+        i-- || clearInterval(int);
+        if(i === 0){
+          socket.emit('dealCards', user)
+        }
+    }, 1000)};
+
 class Table extends React.Component{
 
   componentDidMount(){
@@ -38,6 +47,13 @@ class Table extends React.Component{
 
     socket.on('updateUser', (user) => {
       this.props.onUserUpdate(user)
+    })
+
+    socket.on('initiatePhase', (game) => {
+      this.props.onGameUpdate(game)
+      if(this.props.game.phase === "betting"){
+        countDown(15, this.props.user)
+      }
     })
 
     window.addEventListener('beforeunload', (event) => {

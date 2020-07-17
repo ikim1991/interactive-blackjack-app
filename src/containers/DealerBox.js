@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Dealer from '../components/Dealer';
 import Hand from '../components/Hand';
 import DealerCount from '../components/DealerCount';
-import { countDown } from '../counter';
 import { gamePhase } from '../actions';
 
 const mapStateToProps = (state) => {
@@ -27,7 +26,7 @@ class DealerBox extends React.Component{
         <Dealer/>
         <Hand/>
         <DealerCount/>
-        <div className="text-box ba br2 w-10 bg--near-white">
+        <div className="text-box ba br2 w-25 bg--near-white f2">
           <p>{`${this.props.game.dealer.text}`}</p>
         </div>
       </div>
