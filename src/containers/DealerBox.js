@@ -25,7 +25,7 @@ class DealerBox extends React.Component{
         <Dealer/>
         <Hand dealer={this.props.dealer}/>
         <DealerCount/>
-        <div className="text-box ba br2 w-25 bg--near-white f2">
+        <div className="text-box ba br2 bg--near-white f2">
           <p>{`${this.props.game.dealer.text}`}</p>
         </div>
       </div>

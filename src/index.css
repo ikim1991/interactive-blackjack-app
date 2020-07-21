@@ -126,6 +126,7 @@ body {
 .dealer-box{
   width: 100%;
   display: grid;
+  grid-template-columns: 250px;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -133,9 +134,10 @@ body {
 }
 .text-box{
   display: block;
+  width: 20%;
   position: fixed;
   text-align: center;
-  left: 45%;
+  left: 50%;
   top: 25px;
 }
 

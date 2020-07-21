@@ -10,10 +10,32 @@ const mapStateToProps = (state) => {
 
 function DealerCount(props){
 
+  const checkForAce = (hand, count) =>{
+    let numOfAces = 0
+    for(let i = 0; i<hand.length; i++){
+      if(hand[i].number === 'a'){
+        numOfAces++
+      }
+    }
+    if(numOfAces === 1 && hand.length === 1){
+      return `${count}`
+    } else if(numOfAces === 1 && count === 21){
+      return `${count}`
+    } else if(numOfAces > 1 && (count <= 21)){
+      return `${count - (numOfAces * 10)} or ${count}`
+    } else{
+      return `${count}`
+    }
+  }
+
   return(
     <div className="dealer-count center">
       <div className="ba br3">
-        <p>{`Dealer Has: ${props.game.dealer.count}`}</p>
+      {
+        (props.game.dealer.hand.map(card =>card.number).includes('a')) ?
+        (<p>{`Dealer Has: ${checkForAce(props.game.dealer.hand, props.game.dealer.count)}`}</p>) :
+        (<p>{`Dealer Has: ${props.game.dealer.count}`}</p>)
+      }
       </div>
     </div>
   )
