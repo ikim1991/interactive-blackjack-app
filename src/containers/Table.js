@@ -6,7 +6,6 @@ import PlayerBox from './PlayerBox';
 import { socket } from '../ClientSocket';
 import { connect } from 'react-redux';
 import { updateGameState, updateUser } from '../actions';
-import { sleep } from '../Sleep';
 
 const mapStateToProps = (state) => {
   return {
@@ -29,7 +28,6 @@ const mapDispatchToProps = (dispatch) => {
 const countDown = (i, user, players) => {
     let int = setInterval(function () {
         socket.emit('countdown', i, user)
-        sleep(100)
         i-- || clearInterval(int);
         socket.on('stopCountdown', () =>{
           clearInterval(int)
@@ -54,7 +52,7 @@ class Table extends React.Component{
     socket.on('initiatePhase', (game) => {
       this.props.onGameUpdate(game)
       if(this.props.game.phase === "betting"){
-        countDown(5, this.props.user)
+        countDown(1, this.props.user)
       }
     })
 
