@@ -17,17 +17,42 @@ const mapDispatchToProps = (dispatch) => {
 
 function PlayerCommands(props){
 
-  const onExit = () => {
-    socket.emit('unseat', props.user)
+  const onExit = (event) => {
+    event.target.setAttribute("disabled", "disabled")
+    const element = event.target
+    socket.emit('unseat', props.user, (seated) => {
+      if(seated){
+        element.removeAttribute("disabled")
+      }
+    })
   }
-  const onHit = () => {
-    socket.emit('hit', props.user)
+  const onHit = (event) => {
+    event.target.setAttribute("disabled", "disabled")
+    const element = event.target
+    socket.emit('hit', props.user, (seated) => {
+      if(seated){
+        element.removeAttribute("disabled")
+      }
+    })
   }
-  const onStay = () => {
-    socket.emit('stay', props.user)
+
+  const onStay = (event) => {
+    event.target.setAttribute("disabled", "disabled")
+    const element = event.target
+    socket.emit('stay', props.user, (seated) => {
+      if(seated){
+        element.removeAttribute("disabled")
+      }
+    })
   }
-  const onDouble = () => {
-    socket.emit('double', props.user)
+  const onDouble = (event) => {
+    event.target.setAttribute("disabled", "disabled")
+    const element = event.target
+    socket.emit('double', props.user, (seated) => {
+      if(seated){
+        element.removeAttribute("disabled")
+      }
+    })
   }
 
   if((props.game.phase === "betting" || props.game.phase === "waiting") && (props.user.seated && props.user.playerNumber === props.player)){
