@@ -17,12 +17,13 @@ function DealerCount(props){
         numOfAces++
       }
     }
-    if(numOfAces === 1 && hand.length === 1){
-      return `${count}`
-    } else if(numOfAces === 1 && count === 21){
-      return `${count}`
-    } else if(numOfAces > 1 && (count <= 21)){
-      return `${count - (numOfAces * 10)} or ${count}`
+
+    if(numOfAces > 0){
+      if(count === 11 && hand.length === 1){
+        return `${count}`
+      } else {
+        return `${count}`
+      }
     } else{
       return `${count}`
     }
