@@ -86,6 +86,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2px;
+  overflow-x: hidden;
 }
 
 

@@ -52,7 +52,7 @@ class Table extends React.Component{
     socket.on('initiatePhase', (game) => {
       this.props.onGameUpdate(game)
       if(this.props.game.phase === "betting"){
-        countDown(3, this.props.user)
+        countDown(10, this.props.user)
       }
     })
 
