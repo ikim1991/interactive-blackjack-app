@@ -1,6 +1,12 @@
 body {
   background: #137752;
   overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* LogInForm.js */
@@ -120,6 +126,52 @@ body {
 .player-two, .player-three, .player-four{
   display: flex;
   align-items: flex-end;
+}
+
+/* Info.js */
+.info{
+  display: flex;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  left: 25px;
+  top: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.info:hover{
+  background: #111111;
+}
+
+
+/* Modal.js */
+.modal{
+  position: fixed;
+  background-color: #111111;
+  margin: 20px;
+  width: 72.5%;
+  height: 95%;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0.75;
+  overflow-y: scroll;
+}
+.modal-exit{
+  display: flex;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 15px;
+  top: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.modal-exit:hover{
+  background: #f4f4f4;
+}
+.lucky-payout{
+  line-height: 0.25em;
 }
 
 
@@ -285,7 +337,7 @@ body {
 }
 
 
-@media screen and (max-width: 1365px){
+@media screen and (max-width: 1364px){
   .App{
     display: grid;
     grid-template-columns: 80% 20%;
@@ -381,7 +433,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1366px) and (max-width: 1599px){
+@media screen and (min-width: 1365px) and (max-width: 1599px){
   .App{
     display: grid;
     grid-template-columns: 80% 20%;

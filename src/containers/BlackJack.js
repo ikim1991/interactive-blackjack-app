@@ -1,6 +1,8 @@
 import React from 'react';
 import Table from './Table';
 import Messenger from './Messenger';
+import Info from '../components/Info';
+import Modal from '../components/Modal';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -15,6 +17,8 @@ class BlackJack extends React.Component{
     return(
       (this.props.user.authenticated) ? (
         <div className="App">
+          <Modal/>
+          <Info/>
           <Table/>
           <Messenger/>
         </div>

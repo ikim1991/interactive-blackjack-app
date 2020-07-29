@@ -4,4 +4,8 @@ document.addEventListener("keydown", function(e){
   } else if(e.keyCode === 13 && document.getElementsByClassName("button")[0]){
     document.getElementsByClassName("button")[0].focus()
   }
+
+  if(e.keyCode === 27){
+    document.getElementById("modal").style.visibility = "hidden"
+  }
 })
