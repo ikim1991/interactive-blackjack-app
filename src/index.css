@@ -96,8 +96,6 @@ body {
 }
 
 
-
-
 /* Table.js */
 .table{
   width: 100%;
@@ -336,8 +334,24 @@ body {
   background: #f4f4f4;
 }
 
+@media screen and (min-width: 1025px) and (max-width: 1365px){
+  /* LogInForm.js */
+  .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
 
-@media screen and (max-width: 1364px){
+  .login-title{
+    font-size: 0.6em;
+  }
+
+  .buttons{
+    display: flex;
+  }
+
   .App{
     display: grid;
     grid-template-columns: 80% 20%;
@@ -345,56 +359,73 @@ body {
 
   /* Table.js */
   .table{
-    grid-template-rows: 100px 75px auto;
+    grid-template-rows: 75px 75px auto;
   }
-  .players{
-    bottom: 15px;
-  }
+
 
   /* Dealer.js */
   .dealer-info{
     margin-top: 5px;
     flex-wrap: wrap;
-    font-size: 0.8em;
+    font-size: 1em;
   }
   .dealer-count{
     width: 100%;
-    font-size: 0.8em;
+    visibility: hidden;
+    font-size: 1em;
     text-align: center;
   }
 
+  .text-box{
+    display: block;
+    width: 20%;
+    position: fixed;
+    text-align: center;
+    font-size: 1.25em;
+    left: 55%;
+    top: 20px;
+  }
 
   /* TableRules.js */
   .table-rules{
-    font-size: 0.75em;
-    margin-top: 55px;
+    visibility: hidden;
   }
-  .table-rules p:nth-child(even){
-    font-size: 1.5em;
+
+
+  /* Hand.js */
+  .hand{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    overflow: hidden;
   }
+
 
   /* Card.js */
   .card{
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   /* Counter.js */
   .counter{
-    height: 55px;
-    font-size: 0.8em;
+    height: 35px;
+    font-size: 0.7em;
   }
   .counter-item{
-    grid-template-rows: 25px 25px;
+    grid-template-rows: 15px 15px;
   }
 
   /* Bets.js */
   .bet{
-    height: 50px;
-    font-size: 0.8em;
+    height: 35px;
+    font-size: 0.6em;
   }
   .lucky-lucky{
-    height: 50px;
-    font-size: 0.8em;
+    height: 35px;
+    font-size: 0.6em;
   }
 
 
@@ -433,7 +464,26 @@ body {
   }
 }
 
-@media screen and (min-width: 1365px) and (max-width: 1599px){
+@media screen and (min-width: 1366px) and (max-width: 1599px){
+  /* LogInForm.js */
+  .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1em;
+    padding: 50px;
+  }
+
+  .login-title{
+    font-size: 1em;
+  }
+
+  .buttons{
+    display: flex;
+  }
+
   .App{
     display: grid;
     grid-template-columns: 80% 20%;
@@ -441,59 +491,147 @@ body {
 
   /* Table.js */
   .table{
-    grid-template-rows: 150px 100px auto;
+    grid-template-rows: 100px 75px auto;
   }
-  .players{
-    bottom: 25px;
-  }
+
 
   /* Dealer.js */
   .dealer-info{
+    margin-top: 5px;
     flex-wrap: wrap;
-    margin-top: 15px;
+    font-size: 1em;
   }
   .dealer-count{
     width: 100%;
+    font-size: 1em;
     text-align: center;
   }
 
+  .text-box{
+    display: block;
+    width: 20%;
+    position: fixed;
+    text-align: center;
+    font-size: 1.25em;
+    left: 55%;
+    top: 20px;
+  }
 
   /* TableRules.js */
   .table-rules{
-    font-size: 1.1em;
-    margin-top: 35px;
+    visibility: hidden;
   }
-  .table-rules p:nth-child(even){
-    font-size: 1.7em;
+
+  /* Hand.js */
+  .hand{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    overflow: hidden;
+  }
+
+
+  /* Card.js */
+  .card{
+    font-size: 1em;
+  }
+
+  /* Counter.js */
+  .counter{
+    height: 75px;
+    font-size: 0.9em;
+  }
+  .counter-item{
+    grid-template-rows: 25px 25px;
+  }
+
+  /* Bets.js */
+  .bet{
+    height: 75px;
+    font-size: 0.8em;
+  }
+  .lucky-lucky{
+    height: 75px;
+    font-size: 0.8em;
+  }
+
+
+  /* Chips.js */
+  .chip{
+    width:20px;
+    height: 20px;
+    font-size: 0.7em;
   }
 
   /* PlayerCommands.js */
   .player-commands{
     flex-wrap: wrap;
+    font-size: 0.8em;
   }
   .hit{
-    width: 70px;
+    width: 55px;
   }
   .stay{
-    width: 70px;
+    width: 55px;
   }
   .double{
-    width: 70px;
+    width: 55px;
   }
   .exit{
-    width: 70px;
+    width: 55px;
   }
 
   /* UserInfo.js */
   .user-info{
-    height: 125px;
+    font-size: 1em;
+    height: 120px;
   }
   .user-dp{
-    width: 40px;
+    width: 35px;
+  }
+
+  .players{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    bottom: 10px;
+    justify-items: center;
+  }
+  .player-one, .player-five{
+    display: flex;
+    align-items: baseline;
+  }
+  .player-two, .player-three, .player-four{
+    display: flex;
+    align-items: flex-end;
   }
 }
 
 @media screen and (min-width: 1600px) and (max-width: 1919px){
+
+  /* LogInForm.js */
+  .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.25em;
+    padding: 50px;
+  }
+
+  .login-title{
+    font-size: 1em;
+  }
+
+  .buttons{
+    display: flex;
+  }
+
   .App{
     display: grid;
     grid-template-columns: 80% 20%;
@@ -520,26 +658,15 @@ body {
   .table-rules p:nth-child(even){
     font-size: 1.9em;
   }
-  /* Chips.js */
-  .chips{
-    font-size: 0.9em;
-  }
 
-  /* PlayerCommands.js */
-  .player-commands{
-    font-size: 0.9em;
-  }
-  .hit{
-    width: 55px;
-  }
-  .stay{
-    width: 55px;
-  }
-  .double{
-    width: 55px;
-  }
-  .exit{
-    width: 55px;
+  .text-box{
+    display: block;
+    width: 20%;
+    position: fixed;
+    text-align: center;
+    left: 50%;
+    top: 25px;
+    font-size: 2em;
   }
 }
 
@@ -547,6 +674,35 @@ body {
   .App{
     display: grid;
     grid-template-columns: 75% 25%;
+  }
+
+  /* LogInForm.js */
+  .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.25em;
+    padding: 50px;
+  }
+
+  .login-title{
+    font-size: 1em;
+  }
+
+  .buttons{
+    display: flex;
+  }
+
+  .text-box{
+    display: block;
+    width: 20%;
+    position: fixed;
+    text-align: center;
+    left: 50%;
+    top: 25px;
+    font-size: 2em;
   }
 }
 

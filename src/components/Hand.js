@@ -9,12 +9,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return{
-
-  }
-}
-
 function Hand(props){
 
   const { game, player, dealer } = props
@@ -54,4 +48,4 @@ function Hand(props){
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hand);
+export default connect(mapStateToProps)(Hand);

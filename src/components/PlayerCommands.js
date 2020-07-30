@@ -9,12 +9,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return{
-
-  }
-}
-
 function PlayerCommands(props){
 
   const onExit = (event) => {
@@ -64,7 +58,16 @@ function PlayerCommands(props){
         <button className="exit ba br2 pointer" type="button" onClick={onExit}>Exit</button>
       </div>
     )
-  } else if((props.game.players[props.player].user.turn) && (props.user.seated && props.user.playerNumber === props.player)){
+  } else if((props.game.players[props.player].user.turn && props.game.players[props.player].hand.length > 2) && (props.user.seated && props.user.playerNumber === props.player)){
+    return(
+      <div className="player-commands mb2">
+        <button className="hit ba br2 pointer" type="button" onClick={onHit}>Hit</button>
+        <button className="stay ba br2 pointer" type="button" onClick={onStay}>Stay</button>
+        <button className="double ba br2 pointer" type="button" onClick={onDouble} disabled>Double</button>
+        <button className="exit ba br2 pointer" type="button" disabled>Exit</button>
+      </div>
+    )
+  } else if((props.game.players[props.player].user.turn && props.game.players[props.player].hand.length === 2) && (props.user.seated && props.user.playerNumber === props.player)){
     return(
       <div className="player-commands mb2">
         <button className="hit ba br2 pointer" type="button" onClick={onHit}>Hit</button>
@@ -85,4 +88,4 @@ function PlayerCommands(props){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerCommands)
+export default connect(mapStateToProps)(PlayerCommands)

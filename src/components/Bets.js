@@ -9,12 +9,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return{
-
-  }
-}
-
 function Bets(props){
 
   const dragEnter = (event) => event.preventDefault()
@@ -60,4 +54,4 @@ function Bets(props){
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Bets);
+export default connect(mapStateToProps)(Bets);

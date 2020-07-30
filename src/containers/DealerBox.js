@@ -11,12 +11,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return{
-
-  }
-}
-
 class DealerBox extends React.Component{
 
   render(){
@@ -25,7 +19,7 @@ class DealerBox extends React.Component{
         <Dealer/>
         <Hand dealer={this.props.dealer}/>
         <DealerCount/>
-        <div className="text-box ba br2 bg--near-white f2">
+        <div className="text-box ba br2 bg--near-white">
           <p>{`${this.props.game.dealer.text}`}</p>
         </div>
       </div>
@@ -33,4 +27,4 @@ class DealerBox extends React.Component{
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DealerBox);
+export default connect(mapStateToProps)(DealerBox);

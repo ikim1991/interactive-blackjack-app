@@ -13,7 +13,7 @@ function Modal(){
           <h1>Six-Deck BlackJack Game Rules</h1>
         </div>
         <div className="modal-body near-white indent-l f4">
-          <p>1. To place your bets, drag the desired amount of chips into the BET and/or Lucky Lucky Box. To retract bets, double click on the Box.</p>
+          <p>1. To place your bets, drag the desired amount of chips into the BET and/or Lucky Lucky Box. To retract bets, double click on the box.</p>
           <p>2. The game will initiate when a bet is placed by any of the players. A timer is started indicating the length of time until the cards will be dealt</p>
           <p>3. Once the timer hits 0, the cards will be dealt</p>
           <p>4. After 2 seconds, the dealer will check for Lucky Lucky winners and distribute the winnings</p>
