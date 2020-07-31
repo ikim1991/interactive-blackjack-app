@@ -334,7 +334,7 @@ body {
   background: #f4f4f4;
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1365px){
+@media screen and (min-width: 1024px) and (max-width: 1365px){
   /* LogInForm.js */
   .login-form {
     display: flex;
@@ -667,6 +667,41 @@ body {
     left: 50%;
     top: 25px;
     font-size: 2em;
+  }
+
+  /* Chips.js */
+  .chips{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .chip{
+    display: flex;
+    width:25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  /* PlayerCommands.js */
+  .player-commands{
+    font-size: 0.9em;
+  }
+  .hit{
+    width: 60px;
+  }
+  .stay{
+    width: 60px;
+  }
+  .double{
+    width: 60px;
+  }
+  .exit{
+    width: 60px;
   }
 }
 
