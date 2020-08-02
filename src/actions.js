@@ -4,7 +4,7 @@ export const setChatlog = (userMessage) => ({ type: "APPEND_TO_LOG", payload: us
 
 export const loggingIn = (username, password, server, history) => (dispatch) => {
   dispatch({ type: "LOG_IN_PENDING"})
-  fetch("http://localhost:3001/signin", {
+  fetch("https://ikim-interactive-blackjack-api.herokuapp.com/signin", {
     method: 'post',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ username, password, server})

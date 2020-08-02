@@ -12,7 +12,7 @@ function SignUpForm(props) {
     } else if(password.length === 0){
       alert("Input Password")
     } else{
-      fetch("http://localhost:3001/signup", {
+      fetch("https://ikim-interactive-blackjack-api.herokuapp.com/signup", {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ username, password})
