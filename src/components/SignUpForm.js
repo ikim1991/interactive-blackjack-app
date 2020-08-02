@@ -20,7 +20,7 @@ function SignUpForm(props) {
       .then(res => res.json())
       .then(data => {
         if(!data.error){
-          props.history.push("/")
+          props.history.push("/interactive-blackjack-app/")
           alert(`User ${data.username} was Successfully Created...`)
         } else{
           alert(`User ${data.username} ALREADY EXISTS...`)

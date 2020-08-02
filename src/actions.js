@@ -14,7 +14,7 @@ export const loggingIn = (username, password, server, history) => (dispatch) => 
   .then(data => {
     if(data.payload.authenticated){
       socket.emit('login', data.payload)
-      history.push(`${data.payload.server}`)
+      history.push(`/interactive-blackjack-app/${data.payload.server}`)
     }
   })
   .catch(error => dispatch({ type: "LOG_IN_ERROR", payload: error}))
