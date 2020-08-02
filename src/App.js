@@ -18,12 +18,12 @@ function App() {
     return (
       <div>
         <Switch>
-          <Route exact path="/" render={(props) => <LogIn {...props}/>}/>
-          <Route exact path="/signup" render={(props) => <SignUpForm {...props}/>}/>
-          <Route exact path="/server-1" render={(props) => <BlackJack {...props}/>}/>
-          <Route exact path="/server-2" render={(props) => <BlackJack {...props}/>}/>
-          <Route exact path="/server-3" render={(props) => <BlackJack {...props}/>}/>
-          <Route exact path="/server-4" render={(props) => <BlackJack {...props}/>}/>
+          <Route exact path="/interactive-blackjack-app/" render={(props) => <LogIn {...props}/>}/>
+          <Route exact path="/interactive-blackjack-app/signup" render={(props) => <SignUpForm {...props}/>}/>
+          <Route exact path="/interactive-blackjack-app/server-1" render={(props) => <BlackJack {...props}/>}/>
+          <Route exact path="/interactive-blackjack-app/server-2" render={(props) => <BlackJack {...props}/>}/>
+          <Route exact path="/interactive-blackjack-app/server-3" render={(props) => <BlackJack {...props}/>}/>
+          <Route exact path="/interactive-blackjack-app/server-4" render={(props) => <BlackJack {...props}/>}/>
         </Switch>
       </div>
     );
