@@ -57,7 +57,7 @@ function LogInForm(props) {
           </select>
           <div className="buttons">
             <button className="mt3 mb3 w-20 pa2 center ba bg-transparent hover-bg-black hover-white pointer button" onClick={onConnect}>Connect</button>
-            <button className="mt3 mb3 w-20 pa2 center ba bg-transparent hover-bg-black hover-white pointer button" onClick={() => props.history.push("/signup")}>Sign Up</button>
+            <button className="mt3 mb3 w-20 pa2 center ba bg-transparent hover-bg-black hover-white pointer button" onClick={() => props.history.push("/interactive-blackjack-app/signup")}>Sign Up</button>
           </div>
         </div>
       </div>
