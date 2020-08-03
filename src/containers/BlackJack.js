@@ -23,7 +23,7 @@ class BlackJack extends React.Component{
           <Messenger/>
         </div>
       ) : (
-        <Redirect to="/interactive-blackjack-app/"/>
+        <Redirect to="/"/>
       )
     )
   }

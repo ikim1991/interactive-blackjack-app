@@ -20,7 +20,7 @@ function SignUpForm(props) {
       .then(res => res.json())
       .then(data => {
         if(!data.error){
-          props.history.push("/interactive-blackjack-app/")
+          props.history.push("/")
           alert(`User ${data.username} was Successfully Created...`)
         } else{
           alert(`User ${data.username} ALREADY EXISTS...`)
@@ -43,7 +43,7 @@ function SignUpForm(props) {
           <input id="signup-password" className="pa2 ba mb3 bg-transparent hover-bg-black hover-white w-60" type="password" name="password"/>
           <div className="buttons">
             <button className="mt4 w-25 f4 pa2 center ba bg-transparent hover-bg-black hover-white pointer button" onClick={onSignUp}>Sign Up</button>
-            <button className="mt4 w-25 f4 pa2 center ba bg-transparent hover-bg-black hover-white pointer button" onClick={() => props.history.push("/interactive-blackjack-app/")}>Sign In</button>
+            <button className="mt4 w-25 f4 pa2 center ba bg-transparent hover-bg-black hover-white pointer button" onClick={() => props.history.push("/")}>Sign In</button>
           </div>
         </div>
       </div>

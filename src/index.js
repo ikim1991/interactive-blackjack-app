@@ -14,7 +14,7 @@ const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/interactive-blackjack-app/">
       <Provider store={store}>
         <App/>
       </Provider>
