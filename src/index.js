@@ -14,7 +14,7 @@ const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename="/interactive-blackjack-app/">
+    <HashRouter>
       <Provider store={store}>
         <App/>
       </Provider>
