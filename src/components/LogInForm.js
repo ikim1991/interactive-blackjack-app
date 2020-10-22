@@ -2,6 +2,7 @@ import React from 'react';
 import '../index.css'
 import { connect } from 'react-redux';
 import { loggingIn } from '../actions';
+import Loader from 'react-loader-spinner';
 
 const mapStateToProps = (state) => {
   return {
@@ -65,7 +66,15 @@ function LogInForm(props) {
             </div>
           </div>
         ) : (
-          <div className="loader"></div>
+          <div className="loader">
+            <Loader
+               type="Grid"
+               color="#00BFFF"
+               height={75}
+               width={75}
+            />
+            <div className="loader-text">May Take a Few Seconds to Load...</div>
+          </div>
         )
       }
 
