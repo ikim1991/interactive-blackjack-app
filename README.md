@@ -1,6 +1,8 @@
-# Interactive BlackJack Front-end App  
+# Interactive BlackJack Front-end  
 
 ### Summary  
+
+As a personal project, just for fun, I developed this multiplayer, interactive game of 6-deck BlackJack.  
 
 The front-end web application is hosted on GitHub using GitHub pages.  
 [Website Link](https://ikim1991.github.io/interactive-blackjack-app/)  
