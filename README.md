@@ -1,26 +1,21 @@
-# Interactive BlackJack Front-end  
+# Interactive BlackJack  
 
 ### Summary  
 
-As a personal project, just for fun, I developed this multiplayer, interactive game of 6-deck BlackJack.  
+As a personal project, just for fun, I developed this multiplayer and interactive game of 6-deck BlackJack.  
 
-The front-end web application is hosted on GitHub using GitHub pages.  
-[Website Link](https://ikim1991.github.io/interactive-blackjack-app/)  
+To view the coding documentation for this web application, refer to the link below:  
+[Coding Documentation Link](https://ikim1991.github.io/coding-documentation/#/blackjack/)  
+
+The application is deployed through GitHub Pages and Heroku. The application can be found in the link below:  
+[Production Website Link](https://ikim1991.github.io/interactive-blackjack-app/)  
+
+The source code for the server side can be found in the link below:  
+[Server Side Source Code](https://github.com/ikim1991/interactive-blackjack-api/)  
 
 The back-end application is hosted on Heroku using its free-tier plan. This may cause the first login to take a few seconds to load as the app is put to sleep after 30 minutes of inactivity.  
-[GitHub Repo Link](https://github.com/ikim1991/interactive-blackjack-api/)  
 
-The Front-end was built using React and Redux.  
-
-The web application contains:
-  - Login and Register features
-  - Multiple Servers to choose from
-  - Interactive chat messenger in game
-  - Game of 6-deck BlackJack, up to 5 players  
-
-The game plays best on 16:9 aspect ratio resolutions.  
-The game is currently not supported on mobile and tablets.  
-Minimum screen resolution width of 1024px required.  
+The web application is currently not supported on mobile/tablet.  
 
 ### Images  
 
